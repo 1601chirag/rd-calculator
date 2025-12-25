@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>RD Calculator | Recurring Deposit Maturity Calculator</title>
+  <meta name="description" content="Free RD calculator to calculate recurring deposit maturity amount easily. Useful for students and beginners planning RD investments in India.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+
+  <h1>RD Calculator</h1>
+
+  <p>
+    This RD calculator helps you calculate the maturity amount of a recurring deposit easily.
+    It is useful for understanding how monthly savings grow over time with interest.
+  </p>
+
+  <p>
+    Recurring Deposit (RD) is an investment where you deposit a fixed amount every month
+    for a fixed period and earn interest on it.
+  </p>
+
+  <hr>
+
+  <!-- Calculator Section -->
+  <h2>Calculate Recurring Deposit Maturity Amount</h2>
+
+  <label>Monthly Deposit Amount (₹)</label><br>
+  <input type="number" id="p" placeholder="Enter monthly deposit"><br><br>
+
+  <label>Annual Interest Rate (%)</label><br>
+  <input type="number" id="r" placeholder="Enter interest rate"><br><br>
+
+  <label>Time Period (Months)</label><br>
+  <input type="number" id="n" placeholder="Enter number of months"><br><br>
+
+  <button onclick="calcRD()">Calculate RD</button>
+
+  <p id="result"></p>
+
+  <hr>
+
+  <!-- SEO Content Section -->
+  <h2>How RD Maturity Amount is Calculated</h2>
+
+  <p>
+    The maturity amount of a recurring deposit is calculated using a simplified interest formula
+    based on monthly deposits and interest rate.
+  </p>
+
+  <p>
+    <strong>
+      RD Maturity Amount = (Monthly Deposit × Number of Months) <br>
+      + Interest Earned on Monthly Deposits
+    </strong>
+  </p>
+
+  <p>
+    This calculator uses a standard RD calculation method to give an approximate maturity value.
+  </p>
+
+  <h2>Example of RD Calculation</h2>
+
+  <p>
+    If you deposit ₹2,000 per month for 24 months at an interest rate of 6% per year,
+    the maturity amount will be approximately ₹51,500.
+  </p>
+
+  <h2>Who Should Use This RD Calculator</h2>
+
+  <ul>
+    <li>People planning recurring deposit investments</li>
+    <li>Students learning savings calculations</li>
+    <li>Anyone planning monthly savings</li>
+  </ul>
+
+  <!-- Calculator Logic -->
+  <script>
+    function calcRD() {
+      var p = document.getElementById("p").value;
+      var r = document.getElementById("r").value / 100 / 12;
+      var n = document.getElementById("n").value;
+
+      var amount = (p * n) + (p * n * (n + 1) * r / 2);
+
+      document.getElementById("result").innerHTML =
+        "Maturity Amount = ₹" + amount.toFixed(2);
+    }
+  </script>
+
+</body>
+</html>
